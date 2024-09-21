@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides" >
+				<section data-background="Slides/slide00.svg"  data-background-size="contain" >
+				</section>
+				<section data-background="Slides/slide01.svg"  data-background-size="contain" >
+
+				</section>
+
+					<section data-background="Slides/slide02.svg"  data-background-size="contain" >
+					</section>
+
+					<section data-background="Slides/slide03.svg"  data-background-size="contain" >
+					</section>
+
+					<section data-background="Slides/slide04.svg"  data-background-size="contain" >
+					</section>
+
+					<section data-background="Slides/slide05.svg"  data-background-size="contain" >
+
+					</section>
+
+					<section data-background="Slides/slide06.svg"  data-background-size="contain" data-transition="fade">
+
+
+						 <!-- Adding 4 empty fragments to simulate 4 keypresses -->
+						 <div class="fragment" id="E"></div>
+						 <div class="fragment" id="F"></div>
+						 <div class="fragment" id="G"></div>
+
+
+						 <div id="observablehq-preguntaCaption-07ce9ff5" style="color:black;font-size: 18px; padding: 1rem;"></div>
+							<div id="observablehq-chartForce-07ce9ff5" ></div>
+
+							<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+							<script type="module">
+							import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+							import define from "https://api.observablehq.com/@rusosnith/encuestas-galicia@968.js?v=4";
+							window.main =new Runtime().module(define, name => {
+							if (name === "preguntaCaption") return new Inspector(document.querySelector("#observablehq-preguntaCaption-07ce9ff5"));
+							if (name === "chartForce") return new Inspector(document.querySelector("#observablehq-chartForce-07ce9ff5"));
+							return ["update"].includes(name);
+							});
+							</script>
+
+					</section>
+						
+					<section data-background="Slides/slide07.svg"  data-background-size="contain" >
+					</section>
+						
+					<section data-background="Slides/slide08.svg"  data-background-size="contain" >
+					</section>
+						
+					<section data-background="Slides/slide09.svg"  data-background-size="contain" >
+					</section>
+
+							
+					<section data-background="Slides/slide10.svg"  data-background-size="contain" >
+					</section>
+
+								
+					<section data-background="Slides/slide11.svg"  data-background-size="contain" >
+					</section>
+
+								
+					<section data-background="Slides/slide00.svg"  data-background-size="contain" >
+					</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		
+
+<script>
+    // Initialize reveal.js
+    Reveal.initialize({
+      hash: true,
+	  transition: "none",
+    });
+
+	let currentFragmentIndex = 0; // To keep track of the current fragment
+
+			Reveal.on('fragmentshown', function(event) {
+				runMyFunction(Reveal.getSlidePath())
+
+			});
+
+			Reveal.on('fragmenthidden', function(event) {
+				runMyFunction(Reveal.getSlidePath())
+
+			});
+
+			Reveal.on('slidechanged', function(event) {
+				runMyFunction(Reveal.getSlidePath())
+
+			});
+
+
+			
+
+
+//     // Add event listener for slide change
+//     Reveal.on('slidechanged', function(event) {
+     
+//       // Check which slide we are on and execute code accordingly
+//         console.log('Code running on Slide' + Reveal.getSlidePath());
+//         // Insert the code you want to run
+//         runMyFunction(event.indexh );  // Example function call
+		
+//     });
+
+// 	Reveal.on('fragmentshown', function(event) {
+     
+// 	 // Check which slide we are on and execute code accordingly
+// 	   console.log("fragment" + Reveal.getSlidePath());
+// 	   // Insert the code you want to run
+// 	   runMyFunction(event.indexh );  // Example function call
+	   
+//    });
+	
+
+//    Reveal.on('fragmentfragmenthidden', function(event) {
+     
+// 	 // Check which slide we are on and execute code accordingly
+// 	   console.log("fragment hiudden" + Reveal.getSlidePath());
+// 	   // Insert the code you want to run
+// 	   runMyFunction(event.indexh );  // Example function call
+	   
+//    });
+	
+    // Example function to run
+    function runMyFunction(slide) {
+
+		var index = 0;
+		switch (slide) {
+			case "/6":
+			index=0;
+				break;
+				case "/6/0/0":
+				index=1;
+
+				break;
+				case "/6/0/1":
+				index=2;
+
+				break;
+				case "/6/0/2":
+				index=3;
+
+				break;
+			default:
+				break;
+		}
+		main.redefine("pregunta", ["D","E","F","G"][index])
+
+    }
+  </script>
+
+	</body>
+</html>
